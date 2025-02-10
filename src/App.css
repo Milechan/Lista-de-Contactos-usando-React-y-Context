@@ -1,0 +1,61 @@
+.contenedor-nuevo {
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.titulo1 {
+    font-weight: 600;
+    margin-top: 35px;
+    margin-bottom: 25px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.botonGuardar {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    width: 100%;
+    background-color: rgb(209, 87, 247) !important;
+    border:1px solid grey !important;
+}
+.volverContacto{
+    margin-bottom: 25px;
+    color: rgb(40, 185, 221);
+    text-decoration: underline;
+}
+.contenedorContacto{
+    margin-left: 200px;
+    margin-right: 200px;
+    border: 2px solid grey;
+    border-radius: 10px;
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.fotoContacto{
+    width: 150px;
+    height: 150px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.editar{
+    color: white!important;
+    margin-right: 5px;
+
+}
+.nombreDeContacto{
+   font-size: 20px;
+   font-weight: 600;
+}
+.botonNuevo{
+    margin-top: 40px;
+   margin-left: 930px;
+   margin-bottom: 20px;
+}
+.foto{
+    width: 130px;
+    height: 130px;
+    border-radius: 100px;
+   
+}
