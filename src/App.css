@@ -31,6 +31,8 @@
     display:flex;
     align-items: center;
     justify-content: space-around;
+    width: 900px;
+    margin-bottom: 30px;
 }
 .fotoContacto{
     width: 150px;
@@ -38,6 +40,9 @@
     display:flex;
     justify-content: center;
     align-items: center;
+}
+.infoContacto{
+    width: 400px;
 }
 .editar{
     color: white!important;
@@ -50,8 +55,10 @@
 }
 .botonNuevo{
     margin-top: 40px;
-   margin-left: 930px;
+   /* margin-left: 930px; */
    margin-bottom: 20px;
+   background-color: purple !important;
+   border: 1px solid pink !important;
 }
 .foto{
     width: 130px;
@@ -59,3 +66,10 @@
     border-radius: 100px;
    
 }
+.contenedorLista{
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+}
+
