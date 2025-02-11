@@ -1,15 +1,21 @@
-import { useState } from 'react'
 import './App.css'
+import { BrowserRouter, Route, Routes } from 'react-router'
+import ListaContactos from './components/ListaContactos.jsx'
+import NuevoContacto from './components/NuevoContacto.jsx'
+import EditarContacto from './components/EditarContacto.jsx'
+import injectContext from './store/AppContext.jsx'
 
 function App() {
-  const [count, setCount] = useState(0)
+
 
   return (
-    <>
-      <h1> hello world</h1>
-  
-    </>
+    <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<ListaContactos />} />
+      <Route path="/NuevoContacto" element={<NuevoContacto />} />
+      <Route path="/EditarContacto" element={<EditarContacto />} />
+    </Routes>
+  </BrowserRouter>
   )
 }
-
-export default App
+export default injectContext(App);

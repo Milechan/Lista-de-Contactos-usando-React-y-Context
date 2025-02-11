@@ -1,10 +1,12 @@
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { useNavigate } from "react-router"
 import "../App.css"
 import EditarContacto from "./EditarContacto"
+import { Context } from "../store/AppContext"
 
 const ListaContactos = () => {
     const [contactos, setContactos] = useState([])
+    const { store, actions } = useContext(Context);
     const navigate = useNavigate()
     async function obtenerContactos() {
         try {
@@ -20,8 +22,10 @@ const ListaContactos = () => {
         }
 
     }
-    function editarContacto(id) {
-        navigate("/EditarContacto/"+id)
+    function editarContacto(contacto) {
+        actions.editarContacto(contacto)
+        navigate("/EditarContacto")
+        
         
     }
     function irANuevoContacto() {
@@ -66,7 +70,7 @@ const ListaContactos = () => {
                 contactos.length > 0 ?
                     contactos.map((contacto) => {
                         return (
-                            <div className="contenedorContacto">
+                            <div className="contenedorContacto" key={contacto.id}>
                                 <div className="fotoContacto"><img className="foto" src="https://pbs.twimg.com/media/GhxGBqxWIAAE8XZ.jpg:large" alt="imagen Contacto" /></div>
                                 <div className='infoContacto'  >
                                     <div className="nombreDeContacto">{contacto.name}</div>
@@ -75,7 +79,7 @@ const ListaContactos = () => {
                                     <div><i className="fa-solid fa-envelope"></i>  {contacto.email}</div>
                                 </div>
                                 <div className="botonesContacto">
-                                    <button className="btn btn-warning editar" onClick={()=>{editarContacto(contacto.id)}}><i className="fa-solid fa-pencil"></i></button>
+                                    <button className="btn btn-warning editar" onClick={()=>{editarContacto(contacto)}}><i className="fa-solid fa-pencil"></i></button>
                                    
                                    
                                     <button type="button" className="btn btn-danger eliminar" data-bs-toggle="modal" data-bs-target="#exampleModal">
@@ -83,7 +87,7 @@ const ListaContactos = () => {
                                     </button>
 
                                     
-                                    <div className="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                         <div className="modal-dialog">
                                             <div className="modal-content">
                                                 <div className="modal-header">
